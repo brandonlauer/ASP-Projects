@@ -10,7 +10,7 @@ namespace VidPlace.Models
     {
         public int ID { get; set; }
 
-        [Required (ErrorMessage = "Please enter the customer's name")]
+        [Required (ErrorMessage ="Please enter the customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
