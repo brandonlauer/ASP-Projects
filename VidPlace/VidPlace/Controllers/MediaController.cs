@@ -94,6 +94,15 @@ namespace VidPlace.Controllers
             return View(viewModel);
         }
 
+        public ActionResult New()
+        {
+            var viewModel = new MediaFormViewModel
+            {
+                Media = new Media()
+            };
+            return View("NewMedia", viewModel);
+        }
+
         // GET: Media
         /*public ActionResult Index()
         {
