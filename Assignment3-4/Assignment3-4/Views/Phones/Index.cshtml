@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Assignment3_4.Models.Phone> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Phones</h2>
+@if (!Model.Any())
+{
+    <p>There are no phones available.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Phone Name</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var phone in Model)
+            {
+                <tr>
+                    <td>@phone.PhoneName</td>
+                    <td>@Html.ActionLink("Details", "Details", "Phones", new { id = phone.ID }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

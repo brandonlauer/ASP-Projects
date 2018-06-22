@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Assignment3_4.Models.Brand>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Brands</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Brand name</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var brand in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(brand.BrandName, "AvailablePhones", "Brands", new { id = brand.ID }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
